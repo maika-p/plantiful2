@@ -1,0 +1,23 @@
+@use "index";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap");
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}

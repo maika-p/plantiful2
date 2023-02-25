@@ -1,0 +1,90 @@
+// @use "./mat-breakpoints" as *;
+
+:root {
+  --base-font-size: 1.6rem;
+  --line-height: 1.56;
+
+  --scale: 1.25;
+
+  --h6: calc(var(--base-font-size) * var(--scale));
+  --h5: calc(var(--h6) * var(--scale));
+  --h4: calc(var(--h5) * var(--scale));
+  --h3: calc(var(--h4) * var(--scale));
+  --h2: calc(var(--h3) * var(--scale));
+  --h1: calc(var(--h2) * var(--scale));
+
+  a {
+    font-size: calc(var(--base-font-size) * var(--scale));
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  //   b {
+  //     font-weight: 600;
+  //   }
+
+  //   h1,
+  //   h2,
+  //   h3,
+  //   h4,
+  //   h5,
+  //   h6,
+  //   button,
+  //   mat-toolbar,
+  //   mat-menu,
+  //   mat-menu-item,
+  //   mat-panel-title,
+  //   mat-card,
+  //   .mat-expansion-panel-body {
+  //     font-family: Montserrat;
+  //     margin: 22.4px 0;
+  //   }
+  span {
+    font-size: calc(var(--base-font-size) * var(--scale));
+  }
+  p,
+  button {
+    font-size: var(--base-font-size);
+    line-height: var(--line-height);
+  }
+
+  //   h6 {
+  //     font-size: calc(var(--h6));
+  //     line-height: var(--line-height);
+  //   }
+
+  //   h5 {
+  //     font-size: calc(var(--h5));
+  //     line-height: var(--line-height);
+  //   }
+
+  //   h4 {
+  //     font-size: calc(var(--h4));
+  //     line-height: var(--line-height);
+  //   }
+
+  //   h3 {
+  //     font-size: calc(var(--h3));
+  //     line-height: var(--line-height);
+  //   }
+
+  //   h2 {
+  //     font-size: calc(var(--h2));
+  //     line-height: var(--line-height);
+  //   }
+
+  //   h1 {
+  //     font-size: calc(var(--h1));
+  //     line-height: var(--line-height);
+  //   }
+
+  li {
+    font-size: var(--base-font-size);
+    line-height: var(--line-height);
+  }
+}
+
+html {
+  font-size: 62.5%; /* 10px browser default */
+}
