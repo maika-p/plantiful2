@@ -1,25 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
-import { NgtCanvas } from '@angular-three/core';
-import { NgtMesh } from '@angular-three/core/meshes';
-import { NgtBoxGeometry } from '@angular-three/core/geometries';
-import { NgtMeshStandardMaterial } from '@angular-three/core/materials';
-import { NgtColorAttribute } from '@angular-three/core/attributes';
+import { Store } from '@ngrx/store';
+
+// import { NgtCanvas } from '@angular-three/core';
+// import { NgtMesh } from '@angular-three/core/meshes';
+// import { NgtBoxGeometry } from '@angular-three/core/geometries';
+// import { NgtMeshStandardMaterial } from '@angular-three/core/materials';
+// import { NgtColorAttribute } from '@angular-three/core/attributes';
+import NavbarComponent from './navbar/navbar';
+import { injectAppFeature } from './store/app-state';
 @Component({
   standalone: true,
-  imports: [
-    RouterOutlet,
-    RouterLinkWithHref,
-    NgtCanvas,
-    NgtMesh,
-    NgtBoxGeometry,
-    NgtMeshStandardMaterial,
-    NgtColorAttribute,
-  ],
+  imports: [RouterOutlet, RouterLinkWithHref, NavbarComponent],
   selector: 'app-root',
   template: `
-    <a routerLink="/">Homea</a>
     <router-outlet></router-outlet>
+    <app-navbar></app-navbar>
 
     <!-- <div class="canvas-container">
       <ngt-canvas class="canvas">
@@ -36,20 +32,10 @@ import { NgtColorAttribute } from '@angular-three/core/attributes';
   ],
 })
 export class AppComponent implements OnInit {
-  color: string | null = 'aa';
-  numbero: Number = 1;
+  // store = inject(Store);
+  featureState = injectAppFeature();
 
-  key() {
-    const helloo = '';
-
-    return helloo;
+  ngOnInit() {
+    this.featureState.init();
   }
-
-  ngOnInit(): void {
-    console.log(this.numbero);
-
-    console.log(this.key());
-  }
-
-  // he
 }

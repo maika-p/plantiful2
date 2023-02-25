@@ -1,5 +1,5 @@
 import { RouterLink } from '@angular/router';
-import { Entry } from './../../store/entries';
+import { Entry } from '../../store/entries-state';
 import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -13,7 +13,7 @@ import {
   selector: 'app-entries-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AsyncPipe, JsonPipe, NgFor, RouterLink],
+  imports: [NgFor],
   templateUrl: './entries-list.html',
   styleUrls: ['./entries-list.scss'],
 })

@@ -5,14 +5,15 @@ import {
   emptyProps,
   props,
   createFeature,
-  createSelector,
   provideState,
   Store,
+  createSelector,
 } from '@ngrx/store';
 import { createEffect, Actions, ofType, provideEffects } from '@ngrx/effects';
-import { inject, makeEnvironmentProviders } from '@angular/core';
-import { exhaustMap, map, of, switchMap } from 'rxjs';
+import { Inject, inject, makeEnvironmentProviders } from '@angular/core';
+import { exhaustMap, map, of, switchMap, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 export interface Entry {
   id: number;
@@ -67,13 +68,17 @@ export const entriesFeature = createFeature({
 export const { selectEntriesState, selectEntries, selectCurrentEntryId } =
   entriesFeature;
 
+export const selectEntry = createSelector(
+  selectEntriesState,
+  (state: EntriesState) =>
+    state.entries.find((entry) => entry.id === state.currentEntryId)
+);
+
 export const loadEntries$ = createEffect(
   (actions$ = inject(Actions)) => {
     return actions$.pipe(
       ofType(EntriesActions.enter),
       map(() => {
-        console.log('enter');
-
         const entries: Entry[] = [
           { id: 1, name: 'entry1' },
           { id: 2, name: 'entry2' },
@@ -85,10 +90,23 @@ export const loadEntries$ = createEffect(
   { functional: true }
 );
 
+export const selectEntryRouterEffect$ = createEffect(
+  (actions$ = inject(Actions)) => {
+    const router = inject(Router);
+    return actions$.pipe(
+      ofType(EntriesActions.entrySelected),
+      map(({ entryId }) => {
+        router.navigate(['entries/' + entryId.toString()]);
+      })
+    );
+  },
+  { functional: true, dispatch: false }
+);
+
 export function provideEntriesFeature() {
   return makeEnvironmentProviders([
     provideState(entriesFeature),
-    provideEffects({ loadEntries$ }),
+    provideEffects([{ loadEntries$ }, { selectEntryRouterEffect$ }]),
   ]);
 }
 
@@ -97,6 +115,7 @@ export function injectEntriesFeature() {
 
   return {
     enter: () => store.dispatch(EntriesActions.enter()),
+
     entries$: store.select(selectEntries),
   };
 }

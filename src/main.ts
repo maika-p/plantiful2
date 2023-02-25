@@ -9,7 +9,8 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app/app.component';
 
-import { provideEntriesFeature } from './app/store/entries';
+import { provideEntriesFeature } from './app/store/entries-state';
+import { provideAppFeature } from './app/store/app-state';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -19,5 +20,6 @@ bootstrapApplication(AppComponent, {
     provideStoreDevtools(),
     provideEffects(),
     provideEntriesFeature(),
+    provideAppFeature(),
   ],
 });

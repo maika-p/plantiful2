@@ -1,34 +1,37 @@
+import { Store } from '@ngrx/store';
 import { AsyncPipe } from '@angular/common';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { EntriesActions, injectEntriesFeature } from '../../store/entries';
+import {
+  EntriesActions,
+  selectEntries,
+  selectCurrentEntryId,
+} from '../../store/entries-state';
 import EntriesListComponent from '../../entries/entries-list/entries-list';
-import { Store } from '@ngrx/store/src';
+
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [RouterLink, RouterOutlet, EntriesListComponent, AsyncPipe],
+  imports: [RouterLink, RouterOutlet, AsyncPipe, EntriesListComponent],
   template: `
     <app-entries-list
       [entries]="entries$ | async"
       (selectEntry)="onSelectEntry($event)"
     >
     </app-entries-list>
-    <router-outlet></router-outlet>
   `,
 })
-export default class EntriesContainer {
-  readonly vm = injectEntriesFeature();
-  readonly entries$ = this.vm.entries$;
+export default class EntriesListContainer {
+  // featureState = injectEntriesFeature();
+  store = inject(Store);
+  readonly entries$ = this.store.select(selectEntries);
+  readonly currentId$ = this.store.select(selectCurrentEntryId);
 
   ngOnInit() {
-    this.vm.enter();
-    this.entries$.subscribe((a) => console.log(a));
+    this.store.dispatch(EntriesActions.enter());
+    // this.featureState.enter();
   }
 
   onSelectEntry(entryId: number) {
-    console.log(entryId);
-
-    EntriesActions.entrySelected({ entryId });
+    this.store.dispatch(EntriesActions.entrySelected({ entryId }));
   }
 }

@@ -1,13 +1,14 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { AsyncPipe, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-entry-details',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AsyncPipe, JsonPipe],
+  imports: [],
   templateUrl: 'entry-details.html',
+  styleUrls: ['./entry-details.scss'],
 })
 export default class EntryDetailsComponent {
-  @Input() entryId: String | null = null;
+  @Input() entryId: Number | null = null;
+  @Input() entryName: Number | null = null;
 }

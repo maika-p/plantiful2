@@ -1,4 +1,5 @@
-<span>list of entries</span>
 <div *ngFor="let entry of entries">
-  <button (click)="selectEntry.emit(entry.id)">{{ entry.name }}</button>
+  <button class="button" (click)="selectEntry.emit(entry.id)">
+    {{ entry.name }}
+  </button>
 </div>
