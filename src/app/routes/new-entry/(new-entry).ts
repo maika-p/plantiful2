@@ -1,14 +1,15 @@
 import { Store } from '@ngrx/store';
 import { Component, inject, OnInit } from '@angular/core';
 import { AsyncPipe, JsonPipe } from '@angular/common';
+import NewEntryContainer from '../../../New-entry/new-entry/new-entry.container';
 
 @Component({
   standalone: true,
-  imports: [AsyncPipe, JsonPipe],
-  template: ` <p>helo</p> `,
+  imports: [AsyncPipe, JsonPipe, NewEntryContainer],
+  template: ` <app-new-entry> </app-new-entry> `,
 })
-export default class NewEntryContainer implements OnInit {
-  store = inject(Store);
+export default class NewEntryFeatureContainer implements OnInit {
+  // store = inject(Store);
   ngOnInit() {}
 
   // onSelectEntry(entryId: number) {

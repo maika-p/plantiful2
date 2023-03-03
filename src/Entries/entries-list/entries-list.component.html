@@ -1,0 +1,11 @@
+<div class="flex-column margin-20">
+  <div
+    *ngFor="let entry of entries"
+    class="entry-card"
+    (click)="selectEntry.emit(entry.id)"
+  >
+    <span>{{ entry.name }}</span>
+    <mat-icon>delete</mat-icon>
+    <mat-icon>edit</mat-icon>
+  </div>
+</div>

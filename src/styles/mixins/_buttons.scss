@@ -1,13 +1,6 @@
 @mixin basic-button {
   border: none;
   padding: 10px 25px;
-  border-radius: 55px !important;
   cursor: pointer;
-  background-color: aqua;
-}
-
-@mixin light-blue-button {
-  @include basic-button;
-  background-color: var(--primary-light-blue) !important;
-  color: #181818 !important;
+  background-color: var(--secondary-light);
 }

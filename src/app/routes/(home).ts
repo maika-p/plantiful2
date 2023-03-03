@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, AfterViewInit } from '@angular/core';
 import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AppActions } from '../store/reducers/app.reducer';
+
 @Component({
   standalone: true,
   imports: [RouterLinkWithHref, RouterOutlet],
-  template: `
-    <!-- <h2>Home container</h2>
-    <a routerLink="/entries">Entries</a> |
-    <a routerLink="/new-entry">New entry</a> |
-    <a routerLink="/onboarding">Onboarding</a> |
-    <a routerLink="/settings">Settings</a> -->
-  `,
+  template: ``,
 })
-export default class HomeComponent {}
+export default class HomeRoute implements AfterViewInit {
+  store = inject(Store);
+
+  ngAfterViewInit() {
+    // const featureState = injectAppFeature();
+    this.store.dispatch(AppActions.init());
+    // featureState.init();
+  }
+}

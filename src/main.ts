@@ -1,16 +1,16 @@
-import 'zone.js';
-import { bootstrapApplication } from '@angular/platform-browser';
 import { provideFileRouter } from '@analogjs/router';
+import { bootstrapApplication } from '@angular/platform-browser';
+import 'zone.js';
 
+import { provideHttpClient } from '@angular/common/http';
+import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { provideEffects } from '@ngrx/effects';
-import { provideHttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app/app.component';
 
-import { provideEntriesFeature } from './app/store/entries-state';
-import { provideAppFeature } from './app/store/app-state';
+import { provideAppFeature } from './app/store/reducers/app.reducer';
+import { provideEntriesFeature } from './Entries/store/reducers/entries.reducer';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -19,7 +19,19 @@ bootstrapApplication(AppComponent, {
     provideStore(),
     provideStoreDevtools(),
     provideEffects(),
-    provideEntriesFeature(),
     provideAppFeature(),
+    provideEntriesFeature(),
+
+    // { provide: PreLoadDirective, useClass: PreLoadDirective },
+
+    // { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: disableGlobalRipple },
   ],
-});
+}).catch((err) => console.error(err));
+
+// import {createEnvironmentInjector, ENVIRONMENT_INITIALIZER} from '@angular/core';
+
+// {provide: BACKEND_URL, useValue: 'https://photoapp.looknongmodules.com/api'},
+
+//  importProvidersFrom(
+//       LibraryModule.forRoot()
+//     ),

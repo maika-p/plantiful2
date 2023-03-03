@@ -4,6 +4,7 @@
     routerLink="{{route.path}}"
     class="navbar-item"
   >
-    {{ route.name }}
+    <div class="navbar-icon"><mat-icon>{{ route.matIcon }}</mat-icon></div>
+    <div class="navbar-text">{{ route.name }}</div>
   </div>
 </div>

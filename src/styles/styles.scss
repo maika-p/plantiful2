@@ -1,16 +1,25 @@
-@use "./mixins" as mixins;
-@use "@angular/material" as mat;
-@include mat.core();
-// // @use "./mixins/index";
-
-// @use "index" as a;
-
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap");
+@use "./custom-typography";
+@use "./mixins";
+@use "./colors";
+@use "./common/button";
+// @use "@angular/material" as mat;
+// @include mat.core();
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@400;600&display=swap");
 
 html,
 body {
-  height: 100vh;
+  background-color: var(--primary-dark);
+  color: var(--white-text);
+  overflow: hidden;
+  height: 85vh;
   width: 100vw;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Mukta", sans-serif;
+  font-size: 16px;
 }
 
 img,
@@ -21,14 +30,6 @@ svg {
   display: block;
 }
 
-body {
-  margin: 0;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-}
-
 .button {
   @include mixins.basic-button;
 }
@@ -37,19 +38,77 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
   width: 100vw;
   max-width: 100vw;
   min-width: 100vw;
   position: fixed;
   bottom: 0;
-  background-color: burlywood;
-  height: 8%;
+  background-color: rgb(7 46 29);
+  height: 8vh;
+  box-shadow: rgb(0 0 0 / 10%) 5px 11px 20px -12px;
 
   .navbar-item {
-    background-color: aqua;
-    padding: 5px;
-    border-radius: 5px;
-    color: rebeccapurple;
+    color: #5b987f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: ease-out, width 0.4s, color 0.4s, height 0.4s, transform 0.4s;
+
+    mat-icon {
+      // transform: scale(1);
+    }
+
+    .navbar-icon {
+      display: flex;
+    }
+
+    .navbar-text {
+    }
+
+    // span {
+    //   font-size: 1rem;
+    //   text-transform: uppercase;
+    //   font-weight: 600;
+    //   letter-spacing: 1px;
+    // }
+  }
+
+  .navbar-item:hover {
+    transform: scale(1.1);
+    color: #24ffa4;
+    cursor: pointer;
+  }
+
+  .navbar-item {
+    color: #24ffa4;
+    cursor: pointer;
   }
 }
+
+.canvas-container {
+  height: calc(100vh - 8%);
+  width: 100vw;
+
+  canvas {
+    height: 92%;
+    width: 100%;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.margin-20 {
+  margin: 20px;
+}
+
+.entry-card {
+  height: 7rem;
+}
+
+// done
+// settings
