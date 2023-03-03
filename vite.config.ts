@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => ({
 
   plugins: [
     analog({
-      ssr: true,
+      // ssr: true,
       // static: true,
       ssrBuildDir: './dist/apps/plantiful2/ssr',
       entryServer: './src/main.server.ts',

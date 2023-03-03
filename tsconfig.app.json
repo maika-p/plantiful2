@@ -11,7 +11,9 @@
     "**/*.container.ts",
     "**/*.component.ts",
     "src/Entries/**/*.container.ts",
-    "src/Entries/**/*.component.ts"
+    "src/Entries/**/*.component.ts",
+    "src/New-entry/**/*.container.ts",
+    "src/New-entry/**/*.component.ts"
   ],
   // "paths": { "@ngrx/*": ["./node_modules/@ngrx"] },
   // "@angular/*": ["./node_modules/@angular/*"]

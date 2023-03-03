@@ -2,15 +2,19 @@ import { NgIf } from '@angular/common';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router, RouterLinkWithHref, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar';
+import { TopbarComponent } from './topbar/topbar';
 
 @Component({
   standalone: true,
-  imports: [RouterOutlet, RouterLinkWithHref, NavbarComponent, NgIf],
+  imports: [
+    RouterOutlet,
+    RouterLinkWithHref,
+    NavbarComponent,
+    TopbarComponent,
+    NgIf,
+  ],
   selector: 'app-root',
-  template: `
-    <router-outlet></router-outlet>
-    <app-navbar></app-navbar>
-  `,
+  templateUrl: './app.component.html',
   styles: [],
 })
 export class AppComponent implements OnInit, AfterViewInit {

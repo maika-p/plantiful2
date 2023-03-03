@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   imports: [RouterOutlet],
   template: ` <router-outlet></router-outlet> `,
 })
-export class EntriesRoute {}
+export class NewEntryRoute {}

@@ -1,8 +1,12 @@
 <div class="canvas-container">
-  <ngt-canvas class="canvas">
+  <ngt-canvas>
+    <ngt-ambient-light intensity="0.5"></ngt-ambient-light>
+    <ngt-spot-light [position]="10" angle="0.15" penumbra="1"></ngt-spot-light>
+    <ngt-point-light [position]="-10"></ngt-point-light>
+
     <ngt-color attach="background" color="lightblue"></ngt-color>
-    <ngt-mesh [scale]="1">
-      <ngt-box-geometry></ngt-box-geometry>
-    </ngt-mesh>
+    <app-cube></app-cube>
+
+    <ngt-soba-orbit-controls></ngt-soba-orbit-controls>
   </ngt-canvas>
 </div>

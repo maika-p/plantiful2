@@ -14,12 +14,12 @@ const loadEntries$ = createEffect(
     return actions$.pipe(
       ofType(EntriesActions.initEntries),
       tap(() => store.dispatch(EntriesActions.loadEntries())),
-      switchMap(() => {
-        return entriesService.getEntries().pipe(
+      switchMap(() =>
+        entriesService.getEntries().pipe(
           delay(1500),
-          map((response) => {
-            return EntriesActions.entriesLoadedSuccess({ entries: response });
-          }),
+          map((response) =>
+            EntriesActions.entriesLoadedSuccess({ entries: response })
+          ),
           catchError((error) =>
             of(
               EntriesActions.entriesLoadedFailure({
@@ -27,8 +27,8 @@ const loadEntries$ = createEffect(
               })
             )
           )
-        );
-      })
+        )
+      )
     );
   },
   { functional: true }

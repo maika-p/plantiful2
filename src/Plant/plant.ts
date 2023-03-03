@@ -1,27 +1,27 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  Input,
-  EventEmitter,
-  Output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { NgtCanvas } from '@angular-three/core';
-import { NgtMesh } from '@angular-three/core/meshes';
-import { NgtBoxGeometry } from '@angular-three/core/geometries';
-import { NgtMeshStandardMaterial } from '@angular-three/core/materials';
 import { NgtColorAttribute } from '@angular-three/core/attributes';
+import CubeComponent from './cube';
+import {
+  NgtAmbientLight,
+  NgtSpotLight,
+  NgtPointLight,
+} from '@angular-three/core/lights';
+import { NgtSobaOrbitControls } from '@angular-three/soba/controls';
 
 @Component({
   selector: 'app-plant',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    CubeComponent,
     NgtCanvas,
-    NgtMesh,
-    NgtBoxGeometry,
-    NgtMeshStandardMaterial,
+    NgtAmbientLight,
+    NgtSpotLight,
+    NgtPointLight,
     NgtColorAttribute,
+    NgtSobaOrbitControls,
   ],
   templateUrl: './plant.html',
   styleUrls: ['./plant.scss'],

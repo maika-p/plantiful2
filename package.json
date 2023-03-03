@@ -15,8 +15,9 @@
   },
   "dependencies": {
     "@analogjs/router": "latest",
-    "@angular-three/core": "^6.0.0",
+    "@angular-three/core": "^6.0.1",
     "@angular-three/schematics": "^4.5.0",
+    "@angular-three/soba": "^6.0.1",
     "@angular/animations": "^15.0.0",
     "@angular/cdk": "^15.2.0",
     "@angular/common": "^15.0.0",

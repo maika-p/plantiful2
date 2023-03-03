@@ -13,7 +13,7 @@ export default class HomeRoute implements AfterViewInit {
 
   ngAfterViewInit() {
     // const featureState = injectAppFeature();
-    this.store.dispatch(AppActions.init());
+    // this.store.dispatch(AppActions.init());
     // featureState.init();
   }
 }
