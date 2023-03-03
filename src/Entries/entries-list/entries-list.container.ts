@@ -1,6 +1,5 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
   EntriesActions,
@@ -12,7 +11,7 @@ import { EntriesListComponent } from './entries-list.component';
 @Component({
   selector: 'app-entries-list',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, AsyncPipe, EntriesListComponent],
+  imports: [AsyncPipe, EntriesListComponent],
 
   template: `
     <app-entries-list-component

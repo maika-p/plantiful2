@@ -69,7 +69,7 @@ export const entriesFeature = createFeature({
 export const { selectEntriesState, selectEntries, selectCurrentEntryId } =
   entriesFeature;
 
-export const selectEntry = createSelector(
+export const selectCurrentEntry = createSelector(
   selectEntriesState,
   (state: EntriesState) =>
     state.entries?.find((entry) => entry?.id === state.currentEntryId)

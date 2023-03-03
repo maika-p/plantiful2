@@ -5,18 +5,15 @@ import {
   EventEmitter,
   Output,
 } from '@angular/core';
-
 @Component({
-  selector: 'app-entry-details',
+  selector: 'app-entry-details-component',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
-  templateUrl: 'entry-details.html',
-  styleUrls: ['./entry-details.scss'],
+  templateUrl: 'entry-details.component.html',
+  styleUrls: ['./entry-details.component.scss'],
 })
 export default class EntryDetailsComponent {
   @Input() entryId: Number | null = null;
   @Input() entryName: string | null = null;
-
   @Output() goBack = new EventEmitter();
 }
