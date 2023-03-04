@@ -16,6 +16,7 @@ import {
   AppActions,
 } from './app/store/reducers/app.reducer';
 import { provideEntriesFeature } from './Entries/store/reducers/entries.reducer';
+import { withEnabledBlockingInitialNavigation } from '@angular/router';
 
 if (import.meta.env.PROD) {
   enableProdMode();
@@ -27,7 +28,7 @@ export default async function render(url: string, document: string) {
     document,
     url,
     providers: [
-      provideFileRouter(),
+      provideFileRouter(withEnabledBlockingInitialNavigation()),
       provideHttpClient(),
       provideStore(),
       provideStoreDevtools(),
@@ -35,7 +36,6 @@ export default async function render(url: string, document: string) {
       provideEntriesFeature(),
       provideAppFeature(),
       // { provide: PreLoadDirective, useClass: PreLoadDirective },
-
       { provide: SERVER_CONTEXT, useValue: 'ssr-analog' },
     ],
   });

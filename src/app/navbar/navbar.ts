@@ -21,22 +21,18 @@ export class NavbarComponent {
   routes = [
     {
       name: 'entries',
-      path: '/entries',
+      path: 'entries',
       matIcon: 'list',
     },
 
     {
       name: 'new entry',
-      path: '/new-entry',
+      path: `new-entry`,
       matIcon: 'add_circle_outline',
     },
-
-    // add
-    // add_box
-    // add_circle
     {
       name: 'plant',
-      path: '/plant',
+      path: 'plant',
       matIcon: 'local_florist',
     },
   ];

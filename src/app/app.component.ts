@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLinkWithHref, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar';
 import { TopbarComponent } from './topbar/topbar';
@@ -15,17 +15,12 @@ import { TopbarComponent } from './topbar/topbar';
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [],
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.router.navigate(['/entries']);
     // this.store.dispatch(AppActions.init());
   }
-
-  initApp() {}
-
-  ngAfterViewInit() {}
 }

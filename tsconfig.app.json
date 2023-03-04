@@ -1,27 +1,10 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./out-tsc/app",
-    "types": []
-  },
-  "files": ["src/main.ts", "src/main.server.ts"],
-  "include": [
-    "src/**/*.d.ts",
-    "**/*.ts",
-    "**/*.container.ts",
-    "**/*.component.ts",
-    "src/Entries/**/*.container.ts",
-    "src/Entries/**/*.component.ts",
-    "src/New-entry/**/*.container.ts",
-    "src/New-entry/**/*.component.ts"
-  ],
-  // "paths": { "@ngrx/*": ["./node_modules/@ngrx"] },
-  // "@angular/*": ["./node_modules/@angular/*"]
+  "extends": "./tsconfig.json"
 
-  "paths": {
-    // "@ngrx/signals": [
-    //   "libs/signals/src/index.ts"
-    // ],
-    "@angular/*": ["./node_modules/@angular"]
-  }
+  // "paths": {
+  //   // "@ngrx/signals": [
+  //   //   "libs/signals/src/index.ts"
+  //   // ],
+  //   "@angular/*": ["./node_modules/@angular"]
+  // }
 }

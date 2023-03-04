@@ -3,7 +3,11 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    // "outDir": "./dist/out-tsc",
+    "outDir": "./out-tsc/app",
+    "types": [],
+    // "composite": true,
+    // "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -11,7 +15,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
-    "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
@@ -29,15 +32,29 @@
       // "@plant/entries-components": ["src/entries/index.ts"]
     }
   },
+
+  "files": ["src/main.ts", "src/main.server.ts"],
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/**.ts",
+    "src/**/**.*.ts",
+
+    "src/app/routes/**/*.ts",
+    "src/app/**/**.ts",
+    "src/Entries/**/**.ts",
+    "src/AddEntry/**/**.ts",
+    "src/Ballet/**/**.ts",
+    "src/Plant/**/**.ts"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  },
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ]
+  }
+  // "references": [
+  //   {
+  //     "path": "./tsconfig.app.json"
+  //   }
+  // ]
 }

@@ -1,3 +1,4 @@
+import { withEnabledBlockingInitialNavigation } from '@angular/router';
 import { provideFileRouter } from '@analogjs/router';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
@@ -14,7 +15,7 @@ import { provideEntriesFeature } from './Entries/store/reducers/entries.reducer'
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideFileRouter(),
+    provideFileRouter(withEnabledBlockingInitialNavigation()),
     provideHttpClient(),
     provideStore(),
     provideStoreDevtools(),

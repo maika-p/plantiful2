@@ -1,4 +1,4 @@
-<div class="navbar-container">
+<!-- <div class="navbar-container">
   <div
     *ngFor="let route of routes"
     routerLink="{{route.path}}"
@@ -6,5 +6,18 @@
   >
     <div class="navbar-icon"><mat-icon>{{ route.matIcon }}</mat-icon></div>
     <div class="navbar-text">{{ route.name }}</div>
+  </div>
+</div> -->
+<div class="navbar-container">
+  <div
+    class="navbar-item-container"
+    *ngFor="let route of routes"
+    routerLink="{{route.path}}"
+  >
+    <div class="navbar-item">
+      <div class="navbar-icon"><mat-icon>{{ route.matIcon }}</mat-icon></div>
+    </div>
+    <div class="navbar-item-shadow"></div>
+    <!-- <div class="navbar-text">{{ route.name }}</div> -->
   </div>
 </div>

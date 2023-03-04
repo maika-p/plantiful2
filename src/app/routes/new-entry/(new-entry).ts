@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import NewEntryContainer from '../../../New-entry/new-entry/new-entry.container';
-
+import NewEntryContainer from '../../../NewEntry/new-entry/new-entry.container';
 @Component({
   standalone: true,
   imports: [NewEntryContainer],
-  template: ` <app-new-entry> </app-new-entry> `,
+  template: `<app-new-entry></app-new-entry> `,
 })
-export class NewEntryRouteContainer {}
+export default class NewEntryRouteContainer {}

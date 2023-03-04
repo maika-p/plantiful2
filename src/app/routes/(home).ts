@@ -1,8 +1,6 @@
-import { Component, inject, OnInit, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { AppActions } from '../store/reducers/app.reducer';
-
 @Component({
   standalone: true,
   imports: [RouterLinkWithHref, RouterOutlet],
