@@ -3,11 +3,8 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": "./",
-    // "outDir": "./dist/out-tsc",
     "outDir": "./out-tsc/app",
     "types": [],
-    // "composite": true,
-    // "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -21,24 +18,23 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": ["ES2022", "dom"],
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
     "useDefineForClassFields": false,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "paths": {
-      //   "@signal-router/signals": [
-      //     "libs/signals/src/index.ts"
-      //   ]
-      // "@plant/entries-components": ["src/entries/index.ts"]
-    }
+    "paths": {}
   },
-
-  "files": ["src/main.ts", "src/main.server.ts"],
+  "files": [
+    "src/main.ts",
+    "src/main.server.ts"
+  ],
   "include": [
     "src/**/*.d.ts",
     "src/**/**.ts",
     "src/**/**.*.ts",
-
     "src/app/routes/**/*.ts",
     "src/app/**/**.ts",
     "src/Entries/**/**.ts",
@@ -52,9 +48,4 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
-  // "references": [
-  //   {
-  //     "path": "./tsconfig.app.json"
-  //   }
-  // ]
 }
