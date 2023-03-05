@@ -13,6 +13,7 @@
     class="navbar-item-container"
     *ngFor="let route of routes"
     routerLink="{{route.path}}"
+    [routerLinkActive]="['route-active']"
   >
     <div class="navbar-item">
       <div class="navbar-icon"><mat-icon>{{ route.matIcon }}</mat-icon></div>

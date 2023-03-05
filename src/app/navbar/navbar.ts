@@ -1,4 +1,4 @@
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -8,12 +8,11 @@ import {
   Output,
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AsyncPipe, NgFor, RouterLink, MatIconModule],
+  imports: [AsyncPipe, NgFor, RouterLink, MatIconModule, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.scss'],
 })
