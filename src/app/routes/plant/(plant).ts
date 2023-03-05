@@ -3,6 +3,6 @@ import PlantComponent from '../../../Plant/plant';
 @Component({
   standalone: true,
   imports: [PlantComponent],
-  template: ` <app-plant></app-plant>`,
+  template: ``,
 })
 export default class PlantRouteContainer {}
