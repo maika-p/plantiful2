@@ -1,4 +1,4 @@
-# Plantiful 2?
+# Plantiful 2? 🌱
 
 If Plantiful was so good, why has there not been Plantiful 2?
 
